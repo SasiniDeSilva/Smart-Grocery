@@ -1,3 +1,7 @@
 .color{
     background-color: rgb(135, 223, 135);
 }
+
+.bg-primary{
+    background-color: cornflowerblue !important;
+}
