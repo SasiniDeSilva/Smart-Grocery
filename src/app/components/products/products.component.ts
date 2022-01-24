@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
-  interpolation:['?','?'],
 })
 export class ProductsComponent implements OnInit {
 
