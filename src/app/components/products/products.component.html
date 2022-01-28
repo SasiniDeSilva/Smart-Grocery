@@ -42,10 +42,12 @@
                     </tr>
                     <tr>
                         <th scope="row">4</th>
-                        <td>Dhal</td>
+                        <td >Dhal</td>
                         <td>Imported mysoor dhal from India</td>
                         <td>2022.01.20</td>
-                        <td>120</td>
+                        <!-- <td [ngClass]="isLowInventory ? 'bg-danger' : ''">{{getStorage()}}</td> -->
+                        <td [ngStyle]="isLowInventory ? {'background-color':'red'}: {}"
+                        >{{getStorage()}}</td>
                         <td>200</td>
                     </tr>
                 </tbody>

@@ -13,9 +13,18 @@ export class ProductsComponent implements OnInit {
   }
   
   public firstProductItemName = "White Basmathi Rice" ;
+  public storage =10;
+  public isLowInventory = true;
 
   public getPriceofRice(){
     return 350;
+  }
+
+  public getStorage(){
+    if(this.storage < 50){
+    this. isLowInventory =true;
+    }
+    return this.storage;
   }
 
 
