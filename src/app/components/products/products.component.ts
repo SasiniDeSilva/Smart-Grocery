@@ -41,4 +41,38 @@ export class ProductsComponent implements OnInit {
 //<td>{{quantityOfRice++}}</td>
 //<td>{{quantityOfRice + 1 }}</td>
 
+public products = [{
+  'productId' : "001",
+  'productName' : "White Basmathi Rice",
+  'createdDate': "2020.01.29",
+  'quantity': "100",
+  'unitPrice': "400",
+  'productDescription':"White Basmathi Rice imported from pakistan"
+},
+{ 
+'productId' : "002",
+'productName' : "Sugar",
+'createdDate': "2020.01.29",
+'quantity': "1200",
+'unitPrice': "200",
+'productDescription':"White sugar manufactured by Palwatte Factory"
+},
+
+{ 
+  'productId' : "002",
+  'productName' : "Sugar",
+  'createdDate': "2020.01.29",
+  'quantity': "1200",
+  'unitPrice': "200",
+  'productDescription':"White sugar manufactured by Palwatte Factory"
+},{
+  'productId' : "004",
+  'productName' : "Dhal",
+  'createdDate': "2020.01.29",
+  'quantity': "10",
+  'unitPrice': "200",
+  'productDescription':"Imported mysoor dhal from India"
+}
+
+]
 }

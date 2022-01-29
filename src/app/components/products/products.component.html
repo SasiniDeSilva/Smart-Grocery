@@ -16,39 +16,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>{{firstProductItemName}}</td>
-                        <td>White Basmathi Rice imported from pakistan</td>
-                        <td>2022.01.20</td>
-                        <td>{{2*148}}</td>
-                        <td>{{getPriceofRice()}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Flour</td>
-                        <td>Super FIne Whole grain general Purpose flour</td>
-                        <td>2022.01.20</td>
-                        <td>50</td>
-                        <td>190</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Sugar</td>
-                        <td>White sugar manufactured by Palwatte Factory</td>
-                        <td>2022.01.20</td>
-                        <td>1200</td>
-                        <td>200</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4</th>
-                        <td >Dhal</td>
-                        <td>Imported mysoor dhal from India</td>
-                        <td>2022.01.20</td>
-                        <!-- <td [ngClass]="isLowInventory ? 'bg-danger' : ''">{{getStorage()}}</td> -->
-                        <td [ngStyle]="isLowInventory ? {'background-color':'red'}: {}"
-                        >{{getStorage()}}</td>
-                        <td>200</td>
+                    <tr *ngFor="let product of products">
+                        <th scope="row">{{product.productId}}</th>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productDescription}}</td>
+                        <td>{{product.createdDate}}</td>
+                        <td>{{product.unitPrice}}</td>
+                        <td>{{product.quantity}}</td>
                     </tr>
                 </tbody>
             </table>
