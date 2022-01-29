@@ -13,6 +13,7 @@
                         <th scope="col">Created Date</th>
                         <th scope="col">Quantity in Kgs</th>
                         <th scope="col">Unit Price</th>
+                        <th scope="col">Availability</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,7 +23,11 @@
                         <td>{{product.productDescription}}</td>
                         <td>{{product.createdDate}}</td>
                         <td>{{product.unitPrice}}</td>
-                        <td>{{product.quantity}}</td>
+                        <td >{{product.quantity}}</td>
+                        <td >  
+                            <p *ngIf="product.quantity < 50">Not available </p>
+                            <p *ngIf="product.quantity > 50">Available </p>
+                         </td>
                     </tr>
                 </tbody>
             </table>
