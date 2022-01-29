@@ -23,11 +23,11 @@
                         <td>{{product.productDescription}}</td>
                         <td>{{product.createdDate}}</td>
                         <td>{{product.unitPrice}}</td>
-                        <td >{{product.quantity}}</td>
-                        <td >  
-                            <p *ngIf="product.quantity < 50">Not available </p>
-                            <p *ngIf="product.quantity > 50">Available </p>
-                        </td>
+                        <td>{{product.quantity}}</td>
+                        <td>  
+                            <p *ngIf="product.quantity < 50">Low inventory </p>
+                            <p *ngIf="product.quantity > 50">Suffiecient inventory level</p>
+                         </td>
                     </tr>
                 </tbody>
             </table>
