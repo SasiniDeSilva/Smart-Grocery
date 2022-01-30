@@ -14,11 +14,12 @@
                         <th scope="col">Quantity in Kgs</th>
                         <th scope="col">Unit Price</th>
                         <th scope="col">Availability</th>
+                        <th scope="col">Product Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr *ngFor="let product of products">
-                        <th scope="row">{{product.productId}}</th>
+                <tbody>let i = index" (click)="selectProduct(i)" [ngClass]="rowIndex == i ? 'active' : ''"
+                    <tr *ngFor="let product of products >
+                        <td>{{product.productId}}</td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productDescription}}</td>
                         <td>{{product.createdDate}}</td>
@@ -27,6 +28,11 @@
                         <td>  
                             <p *ngIf="product.quantity < 50">Low inventory </p>
                             <p *ngIf="product.quantity > 50">Suffiecient inventory level</p>
+                         </td>
+                         <td colspan="3">
+                            <button type="button" [disabled]="rowIndex != i && !isRowSelected" class="btn-xs btn-primary"><i class="fa fa-eye"></i></button>
+                            <button type="button"  [disabled]="rowIndex != i && !isRowSelected" class="btn-xs btn-success"><i class="fa fa-pencil-square-o"></i></button>
+                          <button type="button"  [disabled]="rowIndex != i && !isRowSelected" class="btn-xs btn-danger"><i class="fa fa-trash"></i></button>
                          </td>
                     </tr>
                 </tbody>
