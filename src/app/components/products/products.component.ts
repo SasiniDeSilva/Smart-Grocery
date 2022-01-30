@@ -49,7 +49,7 @@ public products = [{
   'createdDate': "2020.01.29",
   'quantity': "100",
   'unitPrice': "400",
-  'productDescription':"White Basmathi Rice imported from pakistan"
+  'productDescription':"White Basmathi Rice imported from pakistan. High quality rice with extra fragnance. Organically grown."
 },
 { 
 'productId' : "002",
@@ -61,12 +61,12 @@ public products = [{
 },
 
 { 
-  'productId' : "002",
-  'productName' : "Sugar",
+  'productId' : "003",
+  'productName' : "Flour",
   'createdDate': "2020.01.29",
-  'quantity': "1200",
-  'unitPrice': "200",
-  'productDescription':"White sugar manufactured by Palwatte Factory"
+  'quantity': "50",
+  'unitPrice': "190",
+  'productDescription':"uper FIne Whole grain general Purpose flour"
 },{
   'productId' : "004",
   'productName' : "Dhal",
