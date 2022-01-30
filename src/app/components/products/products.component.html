@@ -22,8 +22,12 @@
                         <td>{{product.productId}}</td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productDescription}}</td>
-                        <td>{{product.createdDate}}</td>
-                        <td>{{product.unitPrice}}</td>
+                        <td>{{product.createdDate | date}}</td>
+                        <!-- <td>{{product.createdDate | date :"MM/dd/yy"}}</td> -->
+                        <!-- <td>{{product.createdDate | date | uppercase}}</td> -->
+                        <!-- <td>{{product.unitPrice |currency}}</td>
+                        <td>{{product.unitPrice |currency:'EUR'}}</td> -->
+                        <td>{{product.unitPrice |currency:'Rs.'}}</td>
                         <td>{{product.quantity}}</td>
                         <td>  
                             <p *ngIf="product.quantity < 50">Low inventory </p>
