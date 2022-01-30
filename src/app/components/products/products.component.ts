@@ -15,6 +15,8 @@ export class ProductsComponent implements OnInit {
   public firstProductItemName = "White Basmathi Rice" ;
   public storage =10;
   public isLowInventory = true;
+  public isRowSelcted : boolean;
+  public rowIndex :number;
 
   public getPriceofRice(){
     return 350;
@@ -75,4 +77,9 @@ public products = [{
 }
 
 ]
+
+public selectProduct(selectedRow){
+this.isRowSelcted =true;
+this.rowIndex = selectedRow;
+}
 }

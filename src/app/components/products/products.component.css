@@ -12,3 +12,12 @@ table {
 table tbody tr td {
     cursor: pointer;
 }
+table tbody tr.active td{
+    background-color: rgb(199, 212, 219);
+}
+
+.btn-xs{
+    margin :1px;
+    border-radius:2px;
+
+}
