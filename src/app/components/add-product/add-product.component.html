@@ -1,1 +1,39 @@
-<p>Add product works</p>
+<div class="add-product-section mt-3">
+    <div class="box-head">
+        <h1 class="pr-name">Add a new product</h1>
+    </div>
+    <form [formGroup]="productFrom" (ngSubmit)="onSubmit()" class="row g-3">
+        <div class="form-group">
+            <label class="form-label">Product Name</label>
+            <input type="text" class="form-control" formControlName="productName">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Product Description</label>
+            <input type="text" class="form-control" formControlName="productDescription">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Expiry Date</label>
+            <input type="date" class="form-control" formControlName="expiryDate">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="form-label">Unit Price</label>
+                    <input type="number" class="form-control" formControlName="unitPrice">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="form-label">Quantity</label>
+                    <input type="number" class="form-control" formControlName="quantity">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 text-end mt-5">
+            <button type="button" class="btn btn btn-outline-secondary me-2">cancel</button>
+            <button type="submit" class="btn btn-outline-primary">Submit<i
+                    *ngIf="isDataUploading" class="fa fa-spinner fa-pulse fa-fw"></i></button>
+        </div>
+    </form>
+</div>
