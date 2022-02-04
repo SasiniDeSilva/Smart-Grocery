@@ -1,8 +1,10 @@
 <div class="container-fluid main-content">
     <div class="row">
-        <section class= "col-md-12">
-            <div class="mt-3 mb-3">
-                <h3>Product List</h3>
+        <section [ngClass]="showAddProduct? 'col-md-7': 'col-md-12'">
+            <div class="product-header">
+                <h1>Product List</h1>
+                <button *ngIf="!showAddProduct" type="button" class="btn btn-outline-primary" (click)="showAddProducts()">Add Product</button>
+                <button *ngIf="showAddProduct" type="button" class="btn btn-outline-primary" (click)="hideAddProducts()">Close Products</button>
             </div>
             <table class="table">
                 <thead class="thead-light t-head">
@@ -27,7 +29,7 @@
                         <td>{{product.unitPrice |currency:'Rs.'}}</td>
                         
                         <td>  
-                            <p *ngIf="product.quantity < 50">Low inventory </p>
+                            <p *ngIf="product.quantity <= 50">Low inventory </p>
                             <p *ngIf="product.quantity > 50">Suffiecient inventory level</p>
                          </td>
                          <td colspan="3">
@@ -38,6 +40,9 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+        <section class="col-md-5" *ngIf="showAddProduct">
+            <app-add-product></app-add-product>
         </section>
     </div>
 </div>
