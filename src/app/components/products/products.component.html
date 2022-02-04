@@ -2,7 +2,13 @@
     <div class="row">
         <section [ngClass]="showAddProduct? 'col-md-7': 'col-md-12'">
             <div class="product-header">
-                <h1>Product List</h1>
+                <h1>
+                    Product List
+                    <span *ngIf="!isLoading" (click)="refresh()" style="cursor: pointer;">
+                        <i class="fa fa-refresh icon" aria-hidden="true"></i>
+                    </span>
+                    <i *ngIf="isLoading" class="fa fa-refresh fa-spin fa-fw" aria-hidden="true"></i>
+                </h1>
                 <button *ngIf="!showAddProduct" type="button" class="btn btn-outline-primary" (click)="showAddProducts()">Add Product</button>
                 <button *ngIf="showAddProduct" type="button" class="btn btn-outline-primary" (click)="hideAddProducts()">Close Products</button>
             </div>
@@ -33,9 +39,8 @@
                             <p *ngIf="product.quantity > 50">Suffiecient inventory level</p>
                          </td>
                          <td colspan="3">
-                            <button type="button" [disabled]="rowIndex != i && !isRowSelected" class="btn-xs btn-primary"><i class="fa fa-eye"></i></button>
-                            <button type="button"  [disabled]="rowIndex != i && !isRowSelected" class="btn-xs btn-success"><i class="fa fa-pencil-square-o"></i></button>
-                          <button type="button"  [disabled]="rowIndex != i && !isRowSelected" class="btn-xs btn-danger"><i class="fa fa-trash"></i></button>
+                           <i class="fa fa-eye icon"></i>
+                            <i class="fa fa-pencil-square-o icon"></i>
                          </td>
                     </tr>
                 </tbody>

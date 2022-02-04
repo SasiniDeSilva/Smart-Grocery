@@ -21,6 +21,7 @@ export class ProductsComponent implements OnInit {
   }
 
   getProducts(){
+    this.isLoading = true;
     this.productService.getProducts().subscribe({
       next: (res) => {
         this.products = res;
@@ -29,6 +30,7 @@ export class ProductsComponent implements OnInit {
       complete: ()=> this.isLoading = false
     })
   }
+
 
   public selectProduct(selectedRow) {
     this.isRowSelcted = true;
@@ -41,5 +43,9 @@ export class ProductsComponent implements OnInit {
   
   hideAddProducts(){
     this.showAddProduct =false;
+  }
+  
+  refresh(){
+    this.getProducts();
   }
 }
