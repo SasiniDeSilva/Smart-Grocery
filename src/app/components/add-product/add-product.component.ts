@@ -16,7 +16,7 @@ export class AddProductComponent implements OnInit {
     quantity: ['', [Validators.required, Validators.min(50)]],
     expiryDate: ['', Validators.required],
   });
-  
+
   isDataUploading = false
   
   constructor(private fb : FormBuilder,
@@ -35,4 +35,9 @@ export class AddProductComponent implements OnInit {
       this.productFrom.reset();
     });
   }
+
+  get f() {
+    return this.productFrom.controls;
+  }
+
 }

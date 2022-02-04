@@ -15,3 +15,17 @@
     font-size: 22px;
     color: rgb(65, 65, 65);
 }
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  
+  .error {
+    color: red;
+  }
+
+.btn-outline-primary:disabled,
+.btn-outline-primary.disabled {
+  color: #414750;
+  background-color: #c3cddd;
+}

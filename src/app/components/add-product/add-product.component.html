@@ -6,10 +6,19 @@
         <div class="form-group">
             <label class="form-label">Product Name</label>
             <input type="text" class="form-control" formControlName="productName">
+            <!-- <div *ngIf="productFrom.controls['productName'].touched && productFrom.controls['productName'].invalid && productFrom.controls['productName'].errors && f['productName'].errors['required']"
+            class="error">
+            Product name is required.</div> -->
+            <div *ngIf="f['productName'].touched && f['productName'].invalid && f['productName'].errors && f['productName'].errors['required']"
+            class="error">
+            Product name is required.</div>
         </div>
         <div class="form-group">
             <label class="form-label">Product Description</label>
             <input type="text" class="form-control" formControlName="productDescription">
+            <div *ngIf="f['productDescription'].touched && f['productDescription'].invalid && f['productDescription'].errors && f['productDescription'].errors['required']"
+                class="error">
+                Product description is required.</div>
         </div>
         <div class="form-group">
             <label class="form-label">Expiry Date</label>
@@ -26,13 +35,17 @@
                 <div class="form-group">
                     <label class="form-label">Quantity</label>
                     <input type="number" class="form-control" formControlName="quantity">
+                    <div *ngIf="f['quantity'].touched && f['quantity'].invalid && f['quantity'].errors && f['quantity'].errors['required']"
+                        class="error">Product quantity is required</div>
+                    <div *ngIf="f['quantity'].touched && f['quantity'].invalid && f['quantity'].errors && f['quantity'].errors['min']"
+                        class="error">At least 50 items required to add a product</div>
                 </div>
             </div>
         </div>
 
         <div class="col-12 text-end mt-5">
             <button type="button" class="btn btn btn-outline-secondary me-2">cancel</button>
-            <button type="submit" class="btn btn-outline-primary">Submit<i
+            <button type="submit" [disabled]="!productFrom.valid" class="btn btn-outline-primary">Submit<i
                     *ngIf="isDataUploading" class="fa fa-spinner fa-pulse fa-fw"></i></button>
         </div>
     </form>
