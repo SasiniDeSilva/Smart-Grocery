@@ -1,6 +1,7 @@
 <div class="add-product-section mt-3">
     <div class="box-head">
         <h1 class="pr-name">Add a new product</h1>
+        <button type="button" class="btn btn-light" (click)="cancel()">X</button>
     </div>
     <form [formGroup]="productFrom" (ngSubmit)="onSubmit()" class="row g-3">
         <div class="form-group">

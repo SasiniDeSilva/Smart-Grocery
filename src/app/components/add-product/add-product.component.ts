@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Product } from 'src/app/Models/products';
 import { ProductService } from 'src/app/services/product.service';
@@ -9,6 +9,9 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+  @Output() cancelAddView :EventEmitter<void> = new EventEmitter<void>();
+
+
   productFrom = this.fb.group({
     productName: ['', Validators.required],
     productDescription: ['', Validators.required],
@@ -39,5 +42,10 @@ export class AddProductComponent implements OnInit {
   get f() {
     return this.productFrom.controls;
   }
+
+  
+  cancel(){
+    this.cancelAddView.emit();
+ }
 
 }
