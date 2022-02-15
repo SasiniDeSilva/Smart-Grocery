@@ -9,8 +9,7 @@ import { ViewProductComponent } from '../view-product/view-product.component';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
-export class ProductsComponent implements OnInit, AfterViewInit {
-  @ViewChild(ViewProductComponent) viewComponent;
+export class ProductsComponent implements OnInit{
   showAddProduct : boolean;
   showEditProduct : boolean;
   public isLowInventory = true;
@@ -19,17 +18,10 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   public products: Product[];
   isLoading: boolean = false;
   selectedProductId :number;
-  message:string;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.getProducts();
-    //this.message = this.editComponent.childMessage;
-  }
-
-  ngAfterViewInit(){
-    debugger;
-    this.message = this.viewComponent.childMessage
   }
 
   getProducts(){

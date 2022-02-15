@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-product.component.css']
 })
 export class ViewProductComponent implements OnInit {
- childMessage :string = "message from child";
   constructor() { }
 
   ngOnInit(): void {
