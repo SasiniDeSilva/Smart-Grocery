@@ -24,4 +24,8 @@ export class ProductService {
       this.httpOptions
     );
   }
+
+  updateProduct(product: Product): Observable<Product> {
+    return this.http.put<Product>(this._productsUrl, product);
+  }
 }

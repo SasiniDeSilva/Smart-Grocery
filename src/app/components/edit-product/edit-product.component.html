@@ -4,7 +4,7 @@
         <button type="button" class="btn btn-light" (click)="cancel()">X</button>
   
 </div>
-<form class="row g-3" #form="ngForm">
+<form class="row g-3" #form="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label class="form-label">Product Name</label>
         <input type="text" class="form-control" name="productName" #productName="ngModel"
