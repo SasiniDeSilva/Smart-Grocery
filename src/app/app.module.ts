@@ -10,6 +10,7 @@ import { InMemoryDataService } from './Data/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductsComponent,
     ContentLimiterPipe,
     AddProductComponent,
+    EditProductComponent,
   ],
   imports: [
     BrowserModule,

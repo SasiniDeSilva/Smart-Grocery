@@ -1,6 +1,6 @@
 <div class="container-fluid main-content">
     <div class="row">
-        <section [ngClass]="showAddProduct? 'col-md-7': 'col-md-12'">
+        <section [ngClass]="showAddProduct || showEditProduct? 'col-md-7': 'col-md-12'">
             <div class="product-header">
                 <h1>
                     Product List
@@ -39,15 +39,17 @@
                             <p *ngIf="product.quantity > 50">Suffiecient inventory level</p>
                          </td>
                          <td colspan="3">
-                           <i class="fa fa-eye icon"></i>
-                            <i class="fa fa-pencil-square-o icon"></i>
+                            <button type="button" [disabled]="rowIndex != i && !isRowSelected" class="btn-xs icon"><i class="fa fa-eye"></i></button>
+                            <button type="button" [disabled]="rowIndex != i && !isRowSelected" class="btn-xs icon" (click) = "OpenEditProductView()"><i class="fa fa-pencil-square-o"></i></button>
+                            
                          </td>
                     </tr>
                 </tbody>
             </table>
         </section>
-        <section class="col-md-5" *ngIf="showAddProduct">
-            <app-add-product></app-add-product>
+        <section class="col-md-5" *ngIf="showAddProduct || showEditProduct">
+            <app-add-product *ngIf="showAddProduct"></app-add-product>
+            <app-edit-product *ngIf="showEditProduct"></app-edit-product>
         </section>
     </div>
 </div>

@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductsComponent implements OnInit {
   showAddProduct : boolean;
+  showEditProduct : boolean;
   public isLowInventory = true;
   public isRowSelcted: boolean;
   public rowIndex: number;
@@ -47,5 +48,9 @@ export class ProductsComponent implements OnInit {
   
   refresh(){
     this.getProducts();
+  }
+
+  OpenEditProductView(){
+    this.showEditProduct = true;
   }
 }
