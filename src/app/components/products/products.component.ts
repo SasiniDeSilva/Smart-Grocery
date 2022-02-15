@@ -15,6 +15,7 @@ export class ProductsComponent implements OnInit {
   public rowIndex: number;
   public products: Product[];
   isLoading: boolean = false;
+  selectedProductId :number;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -33,9 +34,10 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  public selectProduct(selectedRow) {
+  public selectProduct(selectedRow, product :Product) {
     this.isRowSelcted = true;
     this.rowIndex = selectedRow;
+    this.selectedProductId =product.id;
   }
 
   showAddProducts() {
