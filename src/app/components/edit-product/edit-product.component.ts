@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class EditProductComponent implements OnInit {
 @Input() productId :string;
-@Output() cancelEditView :EventEmitter<void> = new EventEmitter<void>();
+@Output() cancelEditView :EventEmitter<void> = new EventEmitter<void>()
 
   constructor() { }
 

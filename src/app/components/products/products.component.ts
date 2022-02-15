@@ -55,8 +55,12 @@ export class ProductsComponent implements OnInit {
   OpenEditProductView(){
     this.showEditProduct = true;
   }
-  
+
   closeEditView(){
     this.showEditProduct = false;
+  }
+
+  updateProductList($event){
+    this.products.push($event);
   }
 }

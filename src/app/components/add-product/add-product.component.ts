@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class AddProductComponent implements OnInit {
   @Output() cancelAddView :EventEmitter<void> = new EventEmitter<void>();
+  @Output() productEvent :EventEmitter<Product> = new EventEmitter<Product>();
 
 
   productFrom = this.fb.group({
@@ -36,6 +37,7 @@ export class AddProductComponent implements OnInit {
     this.productService.addProduct(values as Product).subscribe((res) => {
       this.isDataUploading = false;
       this.productFrom.reset();
+      this.productEvent.emit(res);
     });
   }
 
