@@ -9,7 +9,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { InMemoryDataService } from './Data/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { ViewProductComponent } from './components/view-product/view-product.component';
 
@@ -27,6 +27,7 @@ import { ViewProductComponent } from './components/view-product/view-product.com
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
       delay: 1500

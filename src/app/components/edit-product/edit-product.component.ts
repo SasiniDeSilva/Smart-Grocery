@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Product } from 'src/app/Models/products';
 
 @Component({
   selector: 'app-edit-product',
@@ -6,7 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./edit-product.component.css']
 })
 export class EditProductComponent implements OnInit {
-@Input() productId :string;
+  @Input() product: Product;
+  isDataUploading = false;
 @Output() cancelEditView :EventEmitter<void> = new EventEmitter<void>()
 
   constructor() { }
