@@ -3,7 +3,7 @@
         <section [ngClass]="showAddProduct || showEditProduct? 'col-md-7': 'col-md-12'">
             <div class="product-header">
                 <h1>
-                    Product List
+                    Product List   {{message}}
                     <span *ngIf="!isLoading" (click)="refresh()" style="cursor: pointer;">
                         <i class="fa fa-refresh icon" aria-hidden="true"></i>
                     </span>
@@ -45,10 +45,12 @@
                     </tr>
                 </tbody>
             </table>
+          {{message}}
         </section>
         <section class="col-md-5" *ngIf="showAddProduct || showEditProduct">
             <app-add-product *ngIf="showAddProduct" (cancelAddView) = "hideAddProducts()" (productEvent) ="updateProductList($event)"></app-add-product>
             <app-edit-product *ngIf="showEditProduct" [productId] = "selectedProductId" (cancelEditView) = "closeEditView()"></app-edit-product>
         </section>
+        <app-view-product></app-view-product>
     </div>
 </div>

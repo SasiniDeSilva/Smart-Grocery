@@ -11,6 +11,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { ViewProductComponent } from './components/view-product/view-product.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     ContentLimiterPipe,
     AddProductComponent,
     EditProductComponent,
+    ViewProductComponent
   ],
   imports: [
     BrowserModule,
